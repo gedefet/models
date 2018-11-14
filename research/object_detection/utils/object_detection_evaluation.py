@@ -210,6 +210,7 @@ class ObjectDetectionEvaluator(DetectionEvaluator):
     # use values from the dictionary or insert None otherwise.
     if (standard_fields.InputDataFields.groundtruth_difficult in
         groundtruth_dict.keys() and
+        groundtruth_dict[standard_fields.InputDataFields.groundtruth_difficult] and
         (groundtruth_dict[standard_fields.InputDataFields.groundtruth_difficult]
          .size or not groundtruth_classes.size)):
       groundtruth_difficult = groundtruth_dict[
@@ -473,6 +474,7 @@ class OpenImagesDetectionEvaluator(ObjectDetectionEvaluator):
     # use values from the dictionary or insert None otherwise.
     if (standard_fields.InputDataFields.groundtruth_group_of in
         groundtruth_dict.keys() and
+        groundtruth_dict[standard_fields.InputDataFields.groundtruth_group_of] and
         (groundtruth_dict[standard_fields.InputDataFields.groundtruth_group_of]
          .size or not groundtruth_classes.size)):
       groundtruth_group_of = groundtruth_dict[
